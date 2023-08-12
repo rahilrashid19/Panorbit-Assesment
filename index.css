@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.max-w-3xl {
+  width: 40%;
+  height: 73%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+}
+.flex-container {
+  position: relative;
+}
+
+.mb-2 {
+  padding: 10px;
+}
+
+.header {
+  background-color: rgb(246, 246, 246);
+}
+
+.card-body {
+  height: 78%;
+}
+
+.wavy-background {
+  background-color: rgb(71, 79, 200);
+  min-height: 400px;
+  padding: 100px 20vw;
+}
+
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a0aec0; /* Grey color */
+  border-radius: 3px;
+}
+
+/* Apply the styles for the scroll container */
+.overflow-y-auto::-webkit-scrollbar-track {
+  background-color: #edf2f7; /* Light grey color */
+  border-radius: 3px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background-color: #718096; /* Darker grey color on hover */
+}
+
+/* Style for the scrollbar when it's in an active state (being dragged) */
+.overflow-y-auto::-webkit-scrollbar-thumb:active {
+  background-color: #4a5568; /* Slightly darker grey color on active */
+}
+
+.custom-shape-divider-top-1691827994 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1691827994 svg {
+  position: relative;
+  display: block;
+  width: calc(164% + 1.3px);
+  height: 444px;
+}
+
+.custom-shape-divider-top-1691827994 .shape-fill {
+  fill: #4a4bc8;
+}
+
+.profile-details {
+  margin: 10px 5rem 0 1rem;
+}
