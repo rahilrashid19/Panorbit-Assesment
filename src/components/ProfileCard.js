@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import ProfileDetails from "./ProfileDetails";
 import ProfileSideBar from "./ProfileSideBar";
+import { useParams } from "react-router-dom";
 
 const ProfileCard = () => {
   const [profileData, setProfileData] = useState([]);
+
+  let { id } = useParams();
+  id = parseInt(id);
 
   useEffect(() => {
     getProfileDetails();
@@ -15,14 +19,16 @@ const ProfileCard = () => {
     setProfileData(profileData.users);
   }
 
+  const nweData = profileData.filter((user) => {
+    return user.id === id;
+  });
+
   return (
     <>
-      {/* {profileData?.map((dt) => ( */}
       <div className="flex h-screen p-20">
         <ProfileSideBar />
-        <ProfileDetails {...profileData[0]} />
+        <ProfileDetails {...nweData[0]} />
       </div>
-      {/* ))} */}
     </>
   );
 };

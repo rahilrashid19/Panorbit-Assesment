@@ -24,6 +24,10 @@ const routes = createBrowserRouter([
         path: "/profile",
         element: <ProfileCard />,
       },
+      {
+        path: "/profile/:id",
+        element: <ProfileCard />,
+      },
     ],
   },
 ]);

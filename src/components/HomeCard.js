@@ -40,7 +40,10 @@ const HomeCardComponent = () => {
           <ul>
             {users?.map((user) => (
               <React.Fragment key={user.id}>
-                <Link to="/profile" onClick={() => handleUserClick(user.id)}>
+                <Link
+                  to={"/profile/" + user.id}
+                  onClick={() => handleUserClick(user.id)}
+                >
                   {" "}
                   <li className="flex items-center space-x-2 mb-2">
                     <img
