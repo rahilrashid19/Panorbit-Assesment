@@ -95,3 +95,20 @@
   top: 21%;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
+.map-cont {
+  marin-left: 5rem;
+}
+
+.address-details-top {
+  width: 60%;
+}
+
+.chat-window {
+  margin: "10px";
+}
+
+.sideBar {
+  height: 100vh;
+  margin-top: 30px;
+}

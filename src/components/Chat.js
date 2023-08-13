@@ -31,7 +31,7 @@ const Chat = ({ profileData }) => {
               Chat
             </button>
             {isOpen && (
-              <ul className="mt-2 max-h-60vh overflow-y-scroll">
+              <ul className="max-h-60vh overflow-y-scroll bg-white shadow-md p-4">
                 {profileData?.map((user) => (
                   <li
                     key={user.id}

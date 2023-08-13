@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Map from "./Map";
 
 const ProfileDetails = ({
   profilepicture,
@@ -103,7 +104,7 @@ const ProfileDetails = ({
               </div>
             </div>
           </div>
-          <div className="address-details border-l border-black">
+          <div className="address-details-top border-l border-black w-60%">
             <div className="address-details pl-20">
               <h1 className="text-gray-400 text-2xl font-bold">Address : </h1>
               <div className="website py-2">
@@ -130,6 +131,13 @@ const ProfileDetails = ({
                   {address?.zipcode}
                 </span>
               </div>
+            </div>
+            <div className="map-cont">
+              <Map
+                className="map"
+                lat={address?.geo?.lat}
+                lng={address?.geo?.lng}
+              />
             </div>
           </div>
         </div>

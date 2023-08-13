@@ -17,7 +17,7 @@ const ChatWindow = ({ user, isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed chat-window bottom-0 right-[calc(20%+16px+100px)] w-[calc(40%-100px)] h-2/4 max-h-[60%] bg-white shadow-md transform transition-transform ${
+      className={`fixed chat-window m-0 bottom-0 right-[calc(20%+16px+100px)] w-[calc(40%-100px)] h-2/4 max-h-[60%] bg-white shadow-md transform transition-transform ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
