@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 const ProfileDetails = ({
   profilepicture,
   name,
@@ -8,12 +11,32 @@ const ProfileDetails = ({
   username,
   email,
 }) => {
+  const [users, setUsers] = useState([]);
+  const [isUserListVisible, setUserListVisible] = useState(false);
+
+  const toggleUserList = () => {
+    setUserListVisible(!isUserListVisible);
+  };
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+
+  async function getUserData() {
+    const data = await fetch("https://panorbit.in/api/users.json");
+    const profileData = await data.json();
+    setUsers(profileData.users);
+  }
+
   return (
     <>
       <div className="main pl-20  flex-col w-full">
         <div className="profile-details flex justify-between items-center  h-20 border-b border-black">
           <h1 className="text-gray-600 text-2xl  font-bold">Profile</h1>
-          <div className="user-details flex justify-between items-center">
+          <div
+            className="user-details flex justify-between items-center cursor-pointer"
+            onClick={toggleUserList}
+          >
             <img
               src={profilepicture}
               alt={`Profile Pic of ${name}`}
@@ -111,6 +134,26 @@ const ProfileDetails = ({
           </div>
         </div>
       </div>
+      {isUserListVisible && (
+        <div className="bg-white p-4 rounded-lg shadow-md overflow-x-auto sign-out">
+          <ul className="space-y-4">
+            <li className="flex items-center flex-col ">
+              <img
+                src={profilepicture}
+                alt={`${name}'s profile`}
+                className="w-28 h-28 rounded-full mt-2 "
+              />
+              <p className="text-gray-600 text-l font-semibold">{name}</p>
+              <p className="text-gray-400 text-l">{email}</p>
+            </li>
+          </ul>
+          <Link to="/">
+            <button className="bg-red-500 hover:bg-red-600 text-white font-semibold mt-4 mx-auto block py-2 px-4 rounded-lg">
+              Sign Out
+            </button>
+          </Link>
+        </div>
+      )}
     </>
   );
 };

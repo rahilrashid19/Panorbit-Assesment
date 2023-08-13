@@ -86,3 +86,12 @@
 .chat-window {
   width: 17% !important;
 }
+
+.sign-out {
+  height: 50%;
+  width: 20%;
+  position: absolute;
+  right: 5%;
+  top: 21%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
