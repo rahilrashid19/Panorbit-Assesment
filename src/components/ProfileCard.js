@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ProfileDetails from "./ProfileDetails";
 import ProfileSideBar from "./ProfileSideBar";
 import { useParams } from "react-router-dom";
+import Chat from "./Chat";
 
 const ProfileCard = () => {
   const [profileData, setProfileData] = useState([]);
@@ -28,6 +29,7 @@ const ProfileCard = () => {
       <div className="flex h-screen p-20">
         <ProfileSideBar />
         <ProfileDetails {...nweData[0]} />
+        <Chat profileData={profileData} />
       </div>
     </>
   );
