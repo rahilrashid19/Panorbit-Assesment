@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Map from "./Map";
 
 const ProfileDetails = ({
@@ -145,15 +145,20 @@ const ProfileDetails = ({
       {isUserListVisible && (
         <div className="bg-white p-4 rounded-lg shadow-md overflow-x-auto sign-out">
           <ul className="space-y-4">
-            <li className="flex items-center flex-col ">
-              <img
-                src={profilepicture}
-                alt={`${name}'s profile`}
-                className="w-28 h-28 rounded-full mt-2 "
-              />
-              <p className="text-gray-600 text-l font-semibold">{name}</p>
-              <p className="text-gray-400 text-l">{email}</p>
-            </li>
+            {users.map((user, index) => (
+              <Link to={"/profile/" + user.id} key={user.id}>
+                <li className="flex items-center py-2">
+                  <img
+                    src={user.profilepicture}
+                    alt={`${user.name}'s profile`}
+                    className="w-16 h-16 rounded-full mr-2"
+                  />
+                  <p className="text-gray-600 text-l font-semibold">
+                    {user.name}
+                  </p>
+                </li>
+              </Link>
+            ))}
           </ul>
           <Link to="/">
             <button className="bg-red-500 hover:bg-red-600 text-white font-semibold mt-4 mx-auto block py-2 px-4 rounded-lg">
